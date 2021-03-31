@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+
+    <title>Frontend Mentor | Ping coming soon page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+      integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w=="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="content-div">
+        <div class="logo"><img src="images/logo.svg" alt="" /></div>
+        <h1><span>We are launching</span> soon!</h1>
+        <h4>Subscribe and get notified</h4>
+        <form>
+          <input
+            type="text"
+            placeholder="Your email address"
+            name="email"
+            required
+          />
+          <label for="email">Please provide a valid email address</label>
+          <button type="submit" onclick="return ValidateEmail()">
+            Notify Me
+          </button>
+        </form>
+      </div>
+      <div class="img-div">
+        <img src="images/illustration-dashboard.png" alt="" />
+      </div>
+      <div class="bottom-div">
+        <div class="social-links">
+          <a href="#" class="link"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" class="link"><i class="fab fa-twitter"></i></a>
+          <a href="#" class="link"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>&copy; Copyright Ping. All rights reserved.</p>
+      </div>
+    </main>
+
+    <footer>
+      <p class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/tushar416">Tushar Mehra</a>.
+      </p>
+    </footer>
+    <script>
+      let email = document.querySelector("input[type=text]");
+      let errortxt = document.querySelector("label");
+      function ValidateEmail() {
+        if (
+          /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/.test(
+            String(email.value)
+          )
+        ) {
+          return true;
+        }
+        email.style.border = "1px solid red";
+        errortxt.style.display = "block";
+        email.focus();
+        return false;
+      }
+    </script>
+  </body>
+</html>
